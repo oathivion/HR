@@ -248,14 +248,17 @@
           <a href="tel:+15034286232">503-428-6232</a>
         </div>
       </div>
-      <form class="contact-form" data-contact-email="hexahire.business@gmail.com">
+      <form class="contact-form" action="https://formsubmit.co/hexahire.business@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New HexaHire scope request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <label>
           Work email
-          <input type="email" name="email" placeholder="you@company.com" required>
+          <input type="email" name="Work email" placeholder="you@company.com" required>
         </label>
         <label>
           Role level
-          <select name="level">
+          <select name="Role level">
             <option>Senior Engineer</option>
             <option>Junior Developer</option>
             <option>Mid-Level Developer</option>
@@ -265,7 +268,7 @@
         </label>
         <label>
           Hiring need
-          <textarea name="message" rows="4" placeholder="Tell us the stack, level, and timeline."></textarea>
+          <textarea name="Hiring need" rows="4" placeholder="Tell us the stack, level, and timeline."></textarea>
         </label>
         <button class="button primary" type="submit">Request Scope</button>
       </form>

@@ -84,25 +84,6 @@ toggles.forEach((button) => {
   button.addEventListener("click", () => setPricingMode(button.dataset.mode));
 });
 
-document.querySelector(".contact-form")?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const formData = new FormData(form);
-  const email = form.dataset.contactEmail || "hexahire.business@gmail.com";
-  const subject = encodeURIComponent(`HexaHire scope request: ${formData.get("level")}`);
-  const body = encodeURIComponent(
-    [
-      `Work email: ${formData.get("email") || ""}`,
-      `Role level: ${formData.get("level") || ""}`,
-      "",
-      "Hiring need:",
-      formData.get("message") || ""
-    ].join("\n")
-  );
-
-  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-});
-
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 cancelAnimationFrame(animationFrame);
