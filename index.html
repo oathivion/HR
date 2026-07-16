@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HexaHire evaluates engineering candidates with structured technical interviews, realistic coding tasks, and senior-level review.">
+  <title>HexaHire | Technical Evaluations for Engineering Teams</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="hexCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="HexaHire home">
+      <span class="brand-mark"></span>
+      <span>HexaHire</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#pricing">Pricing</a>
+      <a href="#method">Method</a>
+      <a href="#standards">Standards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-action" href="#contact">Book Evaluation</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Technical hiring intelligence</p>
+        <h1>Know who can actually build before you hire.</h1>
+        <p class="hero-copy">
+          HexaHire runs paid engineering evaluations for companies that need reliable signals on junior, mid-level, senior, staff, and principal developers.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#pricing">View Tiers</a>
+          <a class="button secondary" href="#method">How It Works</a>
+        </div>
+        <div class="hero-metrics" aria-label="Evaluation highlights">
+          <div>
+            <strong>48h</strong>
+            <span>typical report turnaround</span>
+          </div>
+          <div>
+            <strong>5</strong>
+            <span>role levels covered</span>
+          </div>
+          <div>
+            <strong>360</strong>
+            <span>code, design, communication</span>
+          </div>
+        </div>
+      </div>
+      <aside class="signal-panel" aria-label="Sample candidate signal report">
+        <div class="panel-topline">
+          <span>Senior Backend Evaluation</span>
+          <span class="status-pill">Ready</span>
+        </div>
+        <div class="score-ring" style="--score: 82">
+          <span>82</span>
+          <small>Hire Signal</small>
+        </div>
+        <div class="signal-bars">
+          <div><span>System design</span><i style="--bar: 88%"></i></div>
+          <div><span>Code quality</span><i style="--bar: 79%"></i></div>
+          <div><span>Debugging</span><i style="--bar: 91%"></i></div>
+          <div><span>AI fluency</span><i style="--bar: 74%"></i></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section intro-grid" aria-label="Business value">
+      <div>
+        <p class="eyebrow">Built for lean hiring teams</p>
+        <h2>We replace guesswork with structured technical evidence.</h2>
+      </div>
+      <p>
+        Every evaluation uses a role-specific work sample, a live structured interview, fraud controls, and a calibrated rubric. You get a clear hire/no-hire recommendation, risk notes, leveling guidance, and interview follow-ups for your final panel.
+      </p>
+    </section>
+
+    <section class="section pricing-section" id="pricing">
+      <div class="section-heading">
+        <p class="eyebrow">Tiered by evaluator seniority</p>
+        <h2>Market-aligned technical evaluation pricing</h2>
+        <p>
+          Platform-only tools commonly charge by seat, credit, or assessment volume. HexaHire adds expert review, structured interviews, and decision-ready reporting, so higher-level roles cost more because senior evaluators spend more time on architecture, tradeoff analysis, and calibration.
+        </p>
+      </div>
+
+      <div class="pricing-toggle" role="group" aria-label="Pricing mode">
+        <button class="toggle active" data-mode="single" type="button">Single Eval</button>
+        <button class="toggle" data-mode="pack" type="button">10-Pack</button>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="hex-badge">J1</div>
+          <h3>Junior Developer</h3>
+          <p>Best for apprentices, bootcamp grads, interns, and entry-level engineers.</p>
+          <strong class="price" data-single="$395" data-pack="$3,350">$395</strong>
+          <span class="price-note">per candidate</span>
+          <ul>
+            <li>60-minute coding and debugging task</li>
+            <li>Fundamentals rubric and growth-risk notes</li>
+            <li>Reviewed by mid/senior engineer</li>
+          </ul>
+        </article>
+
+        <article class="price-card">
+          <div class="hex-badge">M2</div>
+          <h3>Mid-Level Developer</h3>
+          <p>For engineers expected to deliver features independently.</p>
+          <strong class="price" data-single="$695" data-pack="$5,900">$695</strong>
+          <span class="price-note">per candidate</span>
+          <ul>
+            <li>90-minute realistic project exercise</li>
+            <li>Code quality, testing, and product judgment</li>
+            <li>Structured technical follow-up interview</li>
+          </ul>
+        </article>
+
+        <article class="price-card featured">
+          <div class="hex-badge">S3</div>
+          <span class="popular">Most Requested</span>
+          <h3>Senior Engineer</h3>
+          <p>For senior ICs who must handle ambiguity and own production systems.</p>
+          <strong class="price" data-single="$1,150" data-pack="$9,775">$1,150</strong>
+          <span class="price-note">per candidate</span>
+          <ul>
+            <li>Live coding plus architecture discussion</li>
+            <li>Incident response and tradeoff evaluation</li>
+            <li>Senior evaluator report within 48 hours</li>
+          </ul>
+        </article>
+
+        <article class="price-card">
+          <div class="hex-badge">P4</div>
+          <h3>Staff / Principal</h3>
+          <p>For technical leaders driving architecture across teams.</p>
+          <strong class="price" data-single="$1,850" data-pack="$15,725">$1,850</strong>
+          <span class="price-note">per candidate</span>
+          <ul>
+            <li>System design, strategy, and leadership signal</li>
+            <li>Portfolio or design-document review</li>
+            <li>Panel-ready evidence packet</li>
+          </ul>
+        </article>
+
+        <article class="price-card">
+          <div class="hex-badge">E5</div>
+          <h3>Executive Architecture</h3>
+          <p>For principal-plus, founding engineer, CTO, and platform leadership hires.</p>
+          <strong class="price" data-single="$2,750" data-pack="$23,375">$2,750</strong>
+          <span class="price-note">per candidate</span>
+          <ul>
+            <li>Two-evaluator calibration review</li>
+            <li>Business impact and org-scale architecture</li>
+            <li>Board or founder summary option</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section method" id="method">
+      <div class="section-heading compact">
+        <p class="eyebrow">Evaluation practice</p>
+        <h2>Evidence over vibes, every time.</h2>
+      </div>
+      <div class="method-grid">
+        <div class="method-step">
+          <span>01</span>
+          <h3>Role Calibration</h3>
+          <p>We map the job to level, stack, must-have competencies, acceptable AI use, and business context before the candidate touches a task.</p>
+        </div>
+        <div class="method-step">
+          <span>02</span>
+          <h3>Work Sample</h3>
+          <p>Candidates complete realistic coding, debugging, or architecture work instead of trivia-heavy puzzles.</p>
+        </div>
+        <div class="method-step">
+          <span>03</span>
+          <h3>Structured Interview</h3>
+          <p>Every evaluator uses the same scoring rubric, probes, and score anchors for comparable candidate signals.</p>
+        </div>
+        <div class="method-step">
+          <span>04</span>
+          <h3>Decision Report</h3>
+          <p>You receive a concise recommendation, scorecard, risks, follow-up questions, and leveling advice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section standards" id="standards">
+      <div class="section-heading">
+        <p class="eyebrow">Industry benchmark</p>
+        <h2>Pricing and practices informed by current market data.</h2>
+      </div>
+      <div class="standards-grid">
+        <article>
+          <h3>Platform economics</h3>
+          <p>CoderPad lists paid plans from $120/month for 5 tests or interviews monthly and $400/month for 30, with $25 overages. TestGorilla lists Plus from $400/month and charges assessment credits per candidate.</p>
+        </article>
+        <article>
+          <h3>Human expert premium</h3>
+          <p>Interview coaching marketplaces publicly cite $225+ mock technical interview sessions, supporting a higher price floor when an experienced engineer conducts and writes up an evaluation.</p>
+        </article>
+        <article>
+          <h3>Best-practice hiring</h3>
+          <p>Research and major-company hiring guidance favor structured interviews, work samples, consistent rubrics, candidate transparency, and human-centered feedback.</p>
+        </article>
+      </div>
+      <div class="source-list" aria-label="Research sources">
+        <a href="https://coderpad.io/pricing/" target="_blank" rel="noreferrer">CoderPad pricing</a>
+        <a href="https://www.testgorilla.com/pricing/" target="_blank" rel="noreferrer">TestGorilla pricing</a>
+        <a href="https://www.wired.com/2015/04/hire-like-google" target="_blank" rel="noreferrer">Structured interview evidence</a>
+        <a href="https://arxiv.org/abs/2602.13845" target="_blank" rel="noreferrer">Human-centered tech hiring research</a>
+      </div>
+    </section>
+
+    <section class="section proof">
+      <div class="proof-copy">
+        <p class="eyebrow">What clients get</p>
+        <h2>A clean technical signal your hiring panel can use immediately.</h2>
+      </div>
+      <div class="deliverables">
+        <span>Hire / No-hire recommendation</span>
+        <span>Leveling confidence</span>
+        <span>Code review notes</span>
+        <span>Architecture risks</span>
+        <span>AI-use observations</span>
+        <span>Next interview probes</span>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div>
+        <p class="eyebrow">Start with one role</p>
+        <h2>Send a job description. We will return an evaluation plan.</h2>
+        <p>
+          Use HexaHire for final-round validation, high-volume screening, fractional CTO support, or confidential executive technical diligence.
+        </p>
+        <div class="contact-links" aria-label="Direct contact">
+          <a href="mailto:hexahire.business@gmail.com">hexahire.business@gmail.com</a>
+          <a href="tel:+15034286232">503-428-6232</a>
+        </div>
+      </div>
+      <form class="contact-form" data-contact-email="hexahire.business@gmail.com">
+        <label>
+          Work email
+          <input type="email" name="email" placeholder="you@company.com" required>
+        </label>
+        <label>
+          Role level
+          <select name="level">
+            <option>Senior Engineer</option>
+            <option>Junior Developer</option>
+            <option>Mid-Level Developer</option>
+            <option>Staff / Principal</option>
+            <option>Executive Architecture</option>
+          </select>
+        </label>
+        <label>
+          Hiring need
+          <textarea name="message" rows="4" placeholder="Tell us the stack, level, and timeline."></textarea>
+        </label>
+        <button class="button primary" type="submit">Request Scope</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>HexaHire</span>
+    <span>
+      <a href="mailto:hexahire.business@gmail.com">hexahire.business@gmail.com</a>
+      <a href="tel:+15034286232">503-428-6232</a>
+    </span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
