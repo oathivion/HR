@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leave a company review for HexaHire technical evaluation services.">
+  <title>Reviews | HexaHire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="hexCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="HexaHire home">
+      <span class="brand-mark"></span>
+      <span>HexaHire</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#method">Method</a>
+      <a href="index.html#standards">Standards</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="header-action" href="index.html#contact">Book Evaluation</a>
+  </header>
+
+  <main>
+    <section class="review-hero">
+      <div>
+        <p class="eyebrow">Client feedback</p>
+        <h1>Rate your HexaHire evaluation experience.</h1>
+        <p class="hero-copy">
+          Company reviews help us improve the technical signal, candidate experience, and business value of every evaluation.
+        </p>
+      </div>
+      <aside class="review-summary" aria-label="Review rating scale">
+        <div class="hex-badge">10</div>
+        <h2>Ten factors. One clear scorecard.</h2>
+        <p>
+          Use a 1 to 10 rating for each factor, where 1 means poor and 10 means excellent.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section review-section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Company review form</p>
+        <h2>Tell us how we performed.</h2>
+      </div>
+
+      <form class="review-form" action="https://formsubmit.co/hexahire.business@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New HexaHire company review">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="review-details">
+          <label>
+            Company name
+            <input type="text" name="Company name" placeholder="Company Inc." required>
+          </label>
+          <label>
+            Work email
+            <input type="email" name="Work email" placeholder="you@company.com" required>
+          </label>
+          <label>
+            Role evaluated
+            <input type="text" name="Role evaluated" placeholder="Senior Backend Engineer">
+          </label>
+        </div>
+
+        <div class="rating-grid" aria-label="Review ratings">
+          <label class="rating-field">
+            <span>Evaluator expertise</span>
+            <input type="range" name="Evaluator expertise" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Technical accuracy</span>
+            <input type="range" name="Technical accuracy" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Role relevance</span>
+            <input type="range" name="Role relevance" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Fairness and consistency</span>
+            <input type="range" name="Fairness and consistency" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Turnaround speed</span>
+            <input type="range" name="Turnaround speed" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Communication quality</span>
+            <input type="range" name="Communication quality" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Report clarity</span>
+            <input type="range" name="Report clarity" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Candidate experience</span>
+            <input type="range" name="Candidate experience" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Security confidence</span>
+            <input type="range" name="Security confidence" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+          <label class="rating-field">
+            <span>Value for money</span>
+            <input type="range" name="Value for money" min="1" max="10" value="8">
+            <output>8</output>
+          </label>
+        </div>
+
+        <label>
+          Written review
+          <textarea name="Written review" rows="5" placeholder="What worked well, and what should we improve?"></textarea>
+        </label>
+
+        <label class="checkbox-field">
+          <input type="checkbox" name="May publish testimonial" value="Yes">
+          <span>HexaHire may publish this review as a testimonial.</span>
+        </label>
+
+        <button class="button primary" type="submit">Submit Review</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>HexaHire</span>
+    <span>
+      <a href="mailto:hexahire.business@gmail.com">hexahire.business@gmail.com</a>
+      <a href="tel:+15034286232">503-428-6232</a>
+    </span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

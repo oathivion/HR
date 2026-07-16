@@ -2,6 +2,7 @@ const canvas = document.getElementById("hexCanvas");
 const ctx = canvas.getContext("2d");
 const toggles = document.querySelectorAll(".toggle");
 const prices = document.querySelectorAll(".price");
+const ratingFields = document.querySelectorAll(".rating-field");
 
 let width = 0;
 let height = 0;
@@ -82,6 +83,15 @@ function setPricingMode(mode) {
 
 toggles.forEach((button) => {
   button.addEventListener("click", () => setPricingMode(button.dataset.mode));
+});
+
+ratingFields.forEach((field) => {
+  const input = field.querySelector("input");
+  const output = field.querySelector("output");
+
+  input.addEventListener("input", () => {
+    output.textContent = input.value;
+  });
 });
 
 window.addEventListener("resize", resizeCanvas);

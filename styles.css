@@ -159,6 +159,15 @@ a {
   padding: clamp(54px, 9vw, 110px) clamp(18px, 5vw, 72px) 68px;
 }
 
+.review-hero {
+  min-height: 62vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 76px);
+  padding: clamp(54px, 9vw, 110px) clamp(18px, 5vw, 72px) 56px;
+}
+
 .hero-content,
 .section {
   max-width: 1180px;
@@ -381,7 +390,9 @@ p {
 .price-card,
 .method-step,
 .standards-grid article,
-.contact-form {
+.contact-form,
+.review-form,
+.review-summary {
   border: 1px solid var(--line);
   background: rgba(17, 17, 20, 0.82);
   border-radius: 8px;
@@ -533,6 +544,88 @@ p {
   padding: 24px;
 }
 
+.review-section {
+  padding-top: 42px;
+}
+
+.review-summary {
+  position: relative;
+  padding: 28px;
+  overflow: hidden;
+}
+
+.review-summary::before,
+.review-form::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  pointer-events: none;
+  border: 1px solid rgba(227, 19, 44, 0.16);
+  clip-path: polygon(8% 0, 92% 0, 100% 14%, 100% 86%, 92% 100%, 8% 100%, 0 86%, 0 14%);
+}
+
+.review-summary h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.review-form {
+  position: relative;
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.review-details,
+.rating-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rating-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rating-field {
+  grid-template-columns: minmax(0, 1fr) minmax(130px, 0.42fr) 42px;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rating-field output {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 38px;
+  border: 1px solid rgba(227, 19, 44, 0.38);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--red-soft);
+  font-weight: 800;
+}
+
+input[type="range"] {
+  accent-color: var(--red);
+  padding: 0;
+}
+
+.checkbox-field {
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: center;
+  color: var(--white-soft);
+}
+
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--red);
+}
+
 label {
   display: grid;
   gap: 8px;
@@ -603,6 +696,7 @@ select option {
   }
 
   .hero,
+  .review-hero,
   .intro-grid,
   .contact,
   .proof {
@@ -616,6 +710,11 @@ select option {
 
   .signal-panel {
     max-width: 520px;
+  }
+
+  .review-details,
+  .rating-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -637,6 +736,15 @@ select option {
 
   .price-card {
     min-height: auto;
+  }
+
+  .rating-field {
+    grid-template-columns: 1fr 42px;
+  }
+
+  .rating-field input {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   .price-card p {
