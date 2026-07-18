@@ -388,6 +388,7 @@ p {
 }
 
 .price-card,
+.payment-card,
 .method-step,
 .standards-grid article,
 .service-keyword-grid article,
@@ -461,6 +462,41 @@ p {
   margin-right: 10px;
   background: var(--red);
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+}
+
+.price-action {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.payment-card {
+  padding: 24px;
+}
+
+.payment-card.featured {
+  border-color: rgba(227, 19, 44, 0.72);
+  background: linear-gradient(180deg, rgba(227, 19, 44, 0.15), rgba(17, 17, 20, 0.9));
+}
+
+.payment-card strong {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 2rem;
+}
+
+.payment-card .button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.payment-summary {
+  border-color: rgba(227, 19, 44, 0.5);
 }
 
 .method-grid,
@@ -692,6 +728,7 @@ select option {
 
 @media (max-width: 1120px) {
   .pricing-grid,
+  .payment-grid,
   .method-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -753,6 +790,7 @@ select option {
   }
 
   .pricing-grid,
+  .payment-grid,
   .method-grid {
     grid-template-columns: 1fr;
   }

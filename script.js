@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const toggles = document.querySelectorAll(".toggle");
 const prices = document.querySelectorAll(".price");
 const ratingFields = document.querySelectorAll(".rating-field");
+const paymentLinks = document.querySelectorAll(".payment-link");
 
 let width = 0;
 let height = 0;
@@ -92,6 +93,16 @@ ratingFields.forEach((field) => {
   input.addEventListener("input", () => {
     output.textContent = input.value;
   });
+});
+
+paymentLinks.forEach((link) => {
+  const paymentUrl = window.HEXA_PAYMENT_LINKS?.[link.dataset.tier];
+
+  if (paymentUrl) {
+    link.href = paymentUrl;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+  }
 });
 
 window.addEventListener("resize", resizeCanvas);

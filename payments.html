@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pay HexaHire for technical evaluation services by ACH, credit card, or debit card. ACH is preferred for the lowest processing cost.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#060607">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HexaHire">
+  <meta property="og:title" content="Pay for HexaHire Technical Evaluations">
+  <meta property="og:description" content="Secure payment options for junior, mid-level, senior, staff, principal, and executive architecture technical evaluations.">
+  <meta property="og:url" content="https://hexahire.xyz/payments.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pay for HexaHire Technical Evaluations">
+  <meta name="twitter:description" content="Pay HexaHire by ACH, credit card, or debit card for structured technical hiring evaluations.">
+  <link rel="canonical" href="https://hexahire.xyz/payments.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Pay for Technical Evaluation Services | HexaHire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hexahire.xyz/#organization",
+        "name": "HexaHire",
+        "url": "https://hexahire.xyz/",
+        "email": "hexahire.business@gmail.com",
+        "telephone": "+15034286232"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hexahire.xyz/payments.html#webpage",
+        "url": "https://hexahire.xyz/payments.html",
+        "name": "Pay for Technical Evaluation Services",
+        "description": "Payment page for HexaHire technical evaluation services.",
+        "about": {
+          "@id": "https://hexahire.xyz/#organization"
+        }
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "HexaHire Payment Options",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Junior Developer Evaluation", "price": "395", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "name": "Mid-Level Developer Evaluation", "price": "695", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "name": "Senior Engineer Evaluation", "price": "1150", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "name": "Staff or Principal Engineer Evaluation", "price": "1850", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "name": "Executive Architecture Evaluation", "price": "2750", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <canvas id="hexCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="HexaHire home">
+      <span class="brand-mark"></span>
+      <span>HexaHire</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html#pricing">Pricing</a>
+      <a href="payments.html">Pay</a>
+      <a href="index.html#method">Method</a>
+      <a href="index.html#standards">Standards</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="header-action" href="mailto:hexahire.business@gmail.com?subject=HexaHire%20invoice%20request">Need Invoice?</a>
+  </header>
+
+  <main>
+    <section class="review-hero payment-hero">
+      <div>
+        <p class="eyebrow">Secure checkout</p>
+        <h1>Pay for a HexaHire technical evaluation.</h1>
+        <p class="hero-copy">
+          ACH bank payments are preferred because they keep processing fees lowest. Credit and debit card payments are also available through secure hosted checkout links.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#payment-options">Choose Payment</a>
+          <a class="button secondary" href="mailto:hexahire.business@gmail.com?subject=HexaHire%20invoice%20request">Request Invoice</a>
+        </div>
+      </div>
+      <aside class="review-summary payment-summary" aria-label="Lowest fee payment recommendation">
+        <div class="hex-badge">ACH</div>
+        <h2>Lowest fee first.</h2>
+        <p>
+          For large B2B invoices, ACH usually costs far less than card processing. Use card checkout when speed or buyer preference matters more.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section payment-section" id="payment-options">
+      <div class="section-heading">
+        <p class="eyebrow">Payment options</p>
+        <h2>Select the evaluation tier.</h2>
+        <p>
+          These buttons are designed for Helcim Payment Pages. Create one payment page or payment request for each tier in Helcim, then paste each live URL into <code>payment-links.js</code>.
+        </p>
+      </div>
+
+      <div class="payment-grid">
+        <article class="payment-card" id="junior">
+          <div class="hex-badge">J1</div>
+          <h3>Junior Developer Evaluation</h3>
+          <strong>$395</strong>
+          <p>Entry-level coding, debugging, fundamentals review, and growth-risk notes.</p>
+          <a class="button primary payment-link" data-tier="junior" href="mailto:hexahire.business@gmail.com?subject=Junior%20Developer%20Evaluation%20payment">Pay $395</a>
+        </article>
+
+        <article class="payment-card" id="mid">
+          <div class="hex-badge">M2</div>
+          <h3>Mid-Level Developer Evaluation</h3>
+          <strong>$695</strong>
+          <p>Project-style assessment, code quality review, testing signal, and structured follow-up.</p>
+          <a class="button primary payment-link" data-tier="mid" href="mailto:hexahire.business@gmail.com?subject=Mid-Level%20Developer%20Evaluation%20payment">Pay $695</a>
+        </article>
+
+        <article class="payment-card featured" id="senior">
+          <div class="hex-badge">S3</div>
+          <h3>Senior Engineer Evaluation</h3>
+          <strong>$1,150</strong>
+          <p>Live coding, architecture discussion, incident judgment, and senior evaluator report.</p>
+          <a class="button primary payment-link" data-tier="senior" href="mailto:hexahire.business@gmail.com?subject=Senior%20Engineer%20Evaluation%20payment">Pay $1,150</a>
+        </article>
+
+        <article class="payment-card" id="staff">
+          <div class="hex-badge">P4</div>
+          <h3>Staff / Principal Evaluation</h3>
+          <strong>$1,850</strong>
+          <p>System design, technical strategy, leadership signal, and panel-ready evidence packet.</p>
+          <a class="button primary payment-link" data-tier="staff" href="mailto:hexahire.business@gmail.com?subject=Staff%20Principal%20Evaluation%20payment">Pay $1,850</a>
+        </article>
+
+        <article class="payment-card" id="executive">
+          <div class="hex-badge">E5</div>
+          <h3>Executive Architecture Evaluation</h3>
+          <strong>$2,750</strong>
+          <p>Principal-plus, founding engineer, CTO, platform leadership, and two-evaluator review.</p>
+          <a class="button primary payment-link" data-tier="executive" href="mailto:hexahire.business@gmail.com?subject=Executive%20Architecture%20Evaluation%20payment">Pay $2,750</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fee-section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Why Helcim</p>
+        <h2>Chosen to keep your processing cost low.</h2>
+      </div>
+      <div class="faq-grid">
+        <article>
+          <h3>ACH is cheapest for big invoices</h3>
+          <p>Helcim lists ACH at 0.5% plus 25 cents, capped at $6 for approved transactions below $25,000.</p>
+        </article>
+        <article>
+          <h3>No monthly account fee</h3>
+          <p>Helcim lists no monthly account fees, no setup fees, no minimums, and no cancellation fees.</p>
+        </article>
+        <article>
+          <h3>Card payments stay available</h3>
+          <p>Clients can still pay by credit or debit card when they prefer speed, rewards, or card-based procurement.</p>
+        </article>
+        <article>
+          <h3>Hosted payment pages</h3>
+          <p>Hosted checkout avoids storing card or bank details on this website, which keeps the static site simpler and safer.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>HexaHire</span>
+    <span>
+      <a href="mailto:hexahire.business@gmail.com">hexahire.business@gmail.com</a>
+      <a href="tel:+15034286232">503-428-6232</a>
+    </span>
+  </footer>
+
+  <script src="payment-links.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
