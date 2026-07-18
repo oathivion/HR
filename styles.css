@@ -390,6 +390,8 @@ p {
 .price-card,
 .method-step,
 .standards-grid article,
+.service-keyword-grid article,
+.faq-grid article,
 .contact-form,
 .review-form,
 .review-summary {
@@ -482,6 +484,22 @@ p {
 
 .standards-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-keyword-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.service-keyword-grid article,
+.faq-grid article {
+  padding: 24px;
+}
+
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .source-list {
@@ -679,6 +697,11 @@ select option {
   }
 
   .standards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-keyword-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 }

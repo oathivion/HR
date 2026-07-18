@@ -1,0 +1,16 @@
+{
+  "name": "HexaHire",
+  "short_name": "HexaHire",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060607",
+  "theme_color": "#e3132c",
+  "description": "Technical evaluations for software engineering hiring teams.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HexaHire">
+  <rect width="64" height="64" fill="#060607"/>
+  <path d="M22 8h20l14 24-14 24H22L8 32 22 8Z" fill="#e3132c"/>
+  <path d="M24 20h8v8h8v-8h8v24h-8v-9h-8v9h-8V20Z" fill="#ffffff"/>
+</svg>
