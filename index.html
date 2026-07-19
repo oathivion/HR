@@ -185,18 +185,21 @@
       </div>
       <aside class="signal-panel" aria-label="Sample candidate signal report">
         <div class="panel-topline">
-          <span>Senior Backend Evaluation</span>
+          <span>Public Review Average</span>
           <span class="status-pill">Ready</span>
         </div>
         <div class="score-ring" style="--score: 82">
-          <span>82</span>
-          <small>Hire Signal</small>
+          <span data-review-average>82</span>
+          <small>Client Score</small>
         </div>
+        <p class="score-context">
+          Average of published company reviews across ten hiring-evaluation factors.
+        </p>
         <div class="signal-bars">
-          <div><span>System design</span><i style="--bar: 88%"></i></div>
-          <div><span>Code quality</span><i style="--bar: 79%"></i></div>
-          <div><span>Debugging</span><i style="--bar: 91%"></i></div>
-          <div><span>AI fluency</span><i style="--bar: 74%"></i></div>
+          <div><span>Evaluator expertise</span><i data-review-factor="evaluatorExpertise" style="--bar: 90%"></i></div>
+          <div><span>Technical accuracy</span><i data-review-factor="technicalAccuracy" style="--bar: 80%"></i></div>
+          <div><span>Report clarity</span><i data-review-factor="reportClarity" style="--bar: 80%"></i></div>
+          <div><span>Value for money</span><i data-review-factor="valueForMoney" style="--bar: 80%"></i></div>
         </div>
       </aside>
     </section>
@@ -394,6 +397,18 @@
       </div>
     </section>
 
+    <section class="section public-reviews">
+      <div class="section-heading compact">
+        <p class="eyebrow">Company reviews</p>
+        <h2>What clients say after using HexaHire.</h2>
+      </div>
+      <div class="review-display-grid" data-review-list data-review-limit="2"></div>
+      <div class="hero-actions">
+        <a class="button primary" href="reviews.html">Read Reviews</a>
+        <a class="button secondary" href="reviews.html#leave-review">Leave Review</a>
+      </div>
+    </section>
+
     <section class="section faq-section" id="faq">
       <div class="section-heading compact">
         <p class="eyebrow">Hiring evaluation FAQ</p>
@@ -466,6 +481,7 @@
     </span>
   </footer>
 
+  <script src="reviews-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -97,18 +97,32 @@
         </p>
       </div>
       <aside class="review-summary" aria-label="Review rating scale">
-        <div class="hex-badge">10</div>
-        <h2>Ten factors. One clear scorecard.</h2>
+        <div class="score-ring compact-score" style="--score: 82">
+          <span data-review-average>82</span>
+          <small>Client Score</small>
+        </div>
+        <h2>Average public review score.</h2>
         <p>
-          Use a 1 to 10 rating for each factor, where 1 means poor and 10 means excellent.
+          This score is calculated from published company reviews across ten hiring-evaluation factors.
         </p>
       </aside>
     </section>
 
-    <section class="section review-section">
+    <section class="section public-reviews">
+      <div class="section-heading compact">
+        <p class="eyebrow">Published reviews</p>
+        <h2>Open any review to see the company scorecard.</h2>
+      </div>
+      <div class="review-display-grid" data-review-list></div>
+    </section>
+
+    <section class="section review-section" id="leave-review">
       <div class="section-heading compact">
         <p class="eyebrow">Company review form</p>
         <h2>Tell us how we performed.</h2>
+        <p>
+          Submitted reviews are emailed to HexaHire first. To publish an approved review on the website, add it to <code>reviews-data.js</code>; the public score updates automatically.
+        </p>
       </div>
 
       <form class="review-form" action="https://formsubmit.co/hexahire.business@gmail.com" method="POST">
@@ -207,6 +221,7 @@
     </span>
   </footer>
 
+  <script src="reviews-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

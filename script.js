@@ -4,6 +4,22 @@ const toggles = document.querySelectorAll(".toggle");
 const prices = document.querySelectorAll(".price");
 const ratingFields = document.querySelectorAll(".rating-field");
 const paymentLinks = document.querySelectorAll(".payment-link");
+const reviewLists = document.querySelectorAll("[data-review-list]");
+const reviewAverageTargets = document.querySelectorAll("[data-review-average]");
+const reviewFactorBars = document.querySelectorAll("[data-review-factor]");
+
+const reviewFactorLabels = {
+  evaluatorExpertise: "Evaluator expertise",
+  technicalAccuracy: "Technical accuracy",
+  roleRelevance: "Role relevance",
+  fairnessConsistency: "Fairness and consistency",
+  turnaroundSpeed: "Turnaround speed",
+  communicationQuality: "Communication quality",
+  reportClarity: "Report clarity",
+  candidateExperience: "Candidate experience",
+  securityConfidence: "Security confidence",
+  valueForMoney: "Value for money"
+};
 
 let width = 0;
 let height = 0;
@@ -96,7 +112,10 @@ ratingFields.forEach((field) => {
 });
 
 paymentLinks.forEach((link) => {
-  const paymentUrl = window.HEXA_PAYMENT_LINKS?.[link.dataset.tier];
+  const tierConfig = window.HEXA_PAYMENT_LINKS?.[link.dataset.tier];
+  const paymentUrl = typeof tierConfig === "string"
+    ? tierConfig
+    : tierConfig?.[link.dataset.paymentType || "full"];
 
   if (paymentUrl) {
     link.href = paymentUrl;
@@ -104,6 +123,78 @@ paymentLinks.forEach((link) => {
     link.rel = "noreferrer";
   }
 });
+
+function getReviewScore(review) {
+  const scores = Object.values(review.ratings || {});
+  if (!scores.length) {
+    return 0;
+  }
+  return Math.round((scores.reduce((total, score) => total + Number(score), 0) / scores.length) * 10);
+}
+
+function getReviewAverage(reviews) {
+  if (!reviews.length) {
+    return 0;
+  }
+  return Math.round(reviews.reduce((total, review) => total + getReviewScore(review), 0) / reviews.length);
+}
+
+function getFactorAverage(reviews, factor) {
+  const scores = reviews
+    .map((review) => Number(review.ratings?.[factor]))
+    .filter((score) => Number.isFinite(score));
+
+  if (!scores.length) {
+    return 0;
+  }
+  return Math.round((scores.reduce((total, score) => total + score, 0) / scores.length) * 10);
+}
+
+function renderReviewCard(review) {
+  const score = getReviewScore(review);
+  const factors = Object.entries(reviewFactorLabels)
+    .map(([key, label]) => `<span>${label}<strong>${review.ratings?.[key] || "-"} / 10</strong></span>`)
+    .join("");
+
+  return `
+    <details class="review-card">
+      <summary>
+        <span>
+          <h3>${review.company}</h3>
+          <span class="review-meta">${review.role} - ${review.reviewer}</span>
+        </span>
+        <span class="review-score">${score}</span>
+      </summary>
+      <blockquote>${review.quote}</blockquote>
+      <p class="review-score-note">Published ${review.date}. Open scorecard:</p>
+      <div class="factor-list">${factors}</div>
+    </details>
+  `;
+}
+
+function renderReviews() {
+  const reviews = window.HEXA_REVIEWS || [];
+  const average = getReviewAverage(reviews);
+
+  reviewAverageTargets.forEach((target) => {
+    target.textContent = average || "0";
+    target.closest(".score-ring")?.style.setProperty("--score", average || 0);
+  });
+
+  reviewFactorBars.forEach((bar) => {
+    const score = getFactorAverage(reviews, bar.dataset.reviewFactor);
+    if (score) {
+      bar.style.setProperty("--bar", `${score}%`);
+    }
+  });
+
+  reviewLists.forEach((list) => {
+    const limit = Number(list.dataset.reviewLimit) || reviews.length;
+    list.innerHTML = reviews.slice(0, limit).map(renderReviewCard).join("");
+  });
+}
+
+renderReviews();
 
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();

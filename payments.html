@@ -84,7 +84,7 @@
         <p class="eyebrow">Secure checkout</p>
         <h1>Pay for a HexaHire technical evaluation.</h1>
         <p class="hero-copy">
-          ACH bank payments are preferred because they keep processing fees lowest. Credit and debit card payments are also available through secure hosted checkout links.
+          ACH bank payments are preferred because they keep processing fees lowest. Credit and debit card payments are also available, and clients may choose to pay in full or split payment 50/50.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#payment-options">Choose Payment</a>
@@ -95,7 +95,7 @@
         <div class="hex-badge">ACH</div>
         <h2>Lowest fee first.</h2>
         <p>
-          For large B2B invoices, ACH usually costs far less than card processing. Use card checkout when speed or buyer preference matters more.
+          Pay in full up front, or pay 50% to start and 50% at completion before the final report is released.
         </p>
       </aside>
     </section>
@@ -105,7 +105,7 @@
         <p class="eyebrow">Payment options</p>
         <h2>Select the evaluation tier.</h2>
         <p>
-          These buttons are designed for Helcim Payment Pages. Create one payment page or payment request for each tier in Helcim, then paste each live URL into <code>payment-links.js</code>.
+          These buttons are designed for Helcim Payment Pages. Create full, deposit, and final payment links for each tier in Helcim, then paste each live URL into <code>payment-links.js</code>.
         </p>
       </div>
 
@@ -114,40 +114,90 @@
           <div class="hex-badge">J1</div>
           <h3>Junior Developer Evaluation</h3>
           <strong>$395</strong>
+          <span class="price-note">50/50: $197.50 deposit, $197.50 final</span>
           <p>Entry-level coding, debugging, fundamentals review, and growth-risk notes.</p>
-          <a class="button primary payment-link" data-tier="junior" href="mailto:hexahire.business@gmail.com?subject=Junior%20Developer%20Evaluation%20payment">Pay $395</a>
+          <div class="payment-actions">
+            <a class="button primary payment-link" data-tier="junior" data-payment-type="full" href="mailto:hexahire.business@gmail.com?subject=Junior%20Developer%20Evaluation%20full%20payment">Pay Full $395</a>
+            <a class="button secondary payment-link" data-tier="junior" data-payment-type="deposit" href="mailto:hexahire.business@gmail.com?subject=Junior%20Developer%20Evaluation%2050%25%20deposit">Pay Deposit</a>
+            <a class="button secondary payment-link" data-tier="junior" data-payment-type="final" href="mailto:hexahire.business@gmail.com?subject=Junior%20Developer%20Evaluation%20final%20payment">Pay Final</a>
+          </div>
         </article>
 
         <article class="payment-card" id="mid">
           <div class="hex-badge">M2</div>
           <h3>Mid-Level Developer Evaluation</h3>
           <strong>$695</strong>
+          <span class="price-note">50/50: $347.50 deposit, $347.50 final</span>
           <p>Project-style assessment, code quality review, testing signal, and structured follow-up.</p>
-          <a class="button primary payment-link" data-tier="mid" href="mailto:hexahire.business@gmail.com?subject=Mid-Level%20Developer%20Evaluation%20payment">Pay $695</a>
+          <div class="payment-actions">
+            <a class="button primary payment-link" data-tier="mid" data-payment-type="full" href="mailto:hexahire.business@gmail.com?subject=Mid-Level%20Developer%20Evaluation%20full%20payment">Pay Full $695</a>
+            <a class="button secondary payment-link" data-tier="mid" data-payment-type="deposit" href="mailto:hexahire.business@gmail.com?subject=Mid-Level%20Developer%20Evaluation%2050%25%20deposit">Pay Deposit</a>
+            <a class="button secondary payment-link" data-tier="mid" data-payment-type="final" href="mailto:hexahire.business@gmail.com?subject=Mid-Level%20Developer%20Evaluation%20final%20payment">Pay Final</a>
+          </div>
         </article>
 
         <article class="payment-card featured" id="senior">
           <div class="hex-badge">S3</div>
           <h3>Senior Engineer Evaluation</h3>
           <strong>$1,150</strong>
+          <span class="price-note">50/50: $575 deposit, $575 final</span>
           <p>Live coding, architecture discussion, incident judgment, and senior evaluator report.</p>
-          <a class="button primary payment-link" data-tier="senior" href="mailto:hexahire.business@gmail.com?subject=Senior%20Engineer%20Evaluation%20payment">Pay $1,150</a>
+          <div class="payment-actions">
+            <a class="button primary payment-link" data-tier="senior" data-payment-type="full" href="mailto:hexahire.business@gmail.com?subject=Senior%20Engineer%20Evaluation%20full%20payment">Pay Full $1,150</a>
+            <a class="button secondary payment-link" data-tier="senior" data-payment-type="deposit" href="mailto:hexahire.business@gmail.com?subject=Senior%20Engineer%20Evaluation%2050%25%20deposit">Pay Deposit</a>
+            <a class="button secondary payment-link" data-tier="senior" data-payment-type="final" href="mailto:hexahire.business@gmail.com?subject=Senior%20Engineer%20Evaluation%20final%20payment">Pay Final</a>
+          </div>
         </article>
 
         <article class="payment-card" id="staff">
           <div class="hex-badge">P4</div>
           <h3>Staff / Principal Evaluation</h3>
           <strong>$1,850</strong>
+          <span class="price-note">50/50: $925 deposit, $925 final</span>
           <p>System design, technical strategy, leadership signal, and panel-ready evidence packet.</p>
-          <a class="button primary payment-link" data-tier="staff" href="mailto:hexahire.business@gmail.com?subject=Staff%20Principal%20Evaluation%20payment">Pay $1,850</a>
+          <div class="payment-actions">
+            <a class="button primary payment-link" data-tier="staff" data-payment-type="full" href="mailto:hexahire.business@gmail.com?subject=Staff%20Principal%20Evaluation%20full%20payment">Pay Full $1,850</a>
+            <a class="button secondary payment-link" data-tier="staff" data-payment-type="deposit" href="mailto:hexahire.business@gmail.com?subject=Staff%20Principal%20Evaluation%2050%25%20deposit">Pay Deposit</a>
+            <a class="button secondary payment-link" data-tier="staff" data-payment-type="final" href="mailto:hexahire.business@gmail.com?subject=Staff%20Principal%20Evaluation%20final%20payment">Pay Final</a>
+          </div>
         </article>
 
         <article class="payment-card" id="executive">
           <div class="hex-badge">E5</div>
           <h3>Executive Architecture Evaluation</h3>
           <strong>$2,750</strong>
+          <span class="price-note">50/50: $1,375 deposit, $1,375 final</span>
           <p>Principal-plus, founding engineer, CTO, platform leadership, and two-evaluator review.</p>
-          <a class="button primary payment-link" data-tier="executive" href="mailto:hexahire.business@gmail.com?subject=Executive%20Architecture%20Evaluation%20payment">Pay $2,750</a>
+          <div class="payment-actions">
+            <a class="button primary payment-link" data-tier="executive" data-payment-type="full" href="mailto:hexahire.business@gmail.com?subject=Executive%20Architecture%20Evaluation%20full%20payment">Pay Full $2,750</a>
+            <a class="button secondary payment-link" data-tier="executive" data-payment-type="deposit" href="mailto:hexahire.business@gmail.com?subject=Executive%20Architecture%20Evaluation%2050%25%20deposit">Pay Deposit</a>
+            <a class="button secondary payment-link" data-tier="executive" data-payment-type="final" href="mailto:hexahire.business@gmail.com?subject=Executive%20Architecture%20Evaluation%20final%20payment">Pay Final</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section transparency-section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Payment transparency</p>
+        <h2>Exactly how payment works.</h2>
+      </div>
+      <div class="faq-grid">
+        <article>
+          <h3>Pay in full</h3>
+          <p>The full evaluation fee is paid before scheduling begins. This is the cleanest option when you want one receipt and no follow-up balance.</p>
+        </article>
+        <article>
+          <h3>Pay half now, half later</h3>
+          <p>The first 50% deposit starts scheduling and evaluator preparation. The final 50% is due at completion before the final report is released.</p>
+        </article>
+        <article>
+          <h3>How card or ACH payment happens</h3>
+          <p>Payment is handled on a secure Helcim-hosted checkout page. HexaHire does not store card numbers, bank details, or payment credentials on this website.</p>
+        </article>
+        <article>
+          <h3>What the listed price includes</h3>
+          <p>The listed price covers the evaluation tier shown, evaluator review, and the written report. Any custom scope, rush delivery, or extra candidates should be confirmed by invoice before payment.</p>
         </article>
       </div>
     </section>
