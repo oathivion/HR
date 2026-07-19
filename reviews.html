@@ -127,13 +127,14 @@
 
       <form class="review-form" action="https://formsubmit.co/hexahire.business@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New HexaHire company review">
-        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_template" value="box">
         <input type="hidden" name="_captcha" value="false">
+        <textarea class="visually-hidden" name="reviews-data.js entry" data-review-snippet tabindex="-1" aria-hidden="true"></textarea>
 
         <div class="review-details">
           <label>
             Company name
-            <input type="text" name="Company name" placeholder="Company Inc." required>
+            <input type="text" name="Company name" data-review-field="company" placeholder="Company Inc." required>
           </label>
           <label>
             Work email
@@ -141,66 +142,70 @@
           </label>
           <label>
             Role evaluated
-            <input type="text" name="Role evaluated" placeholder="Senior Backend Engineer">
+            <input type="text" name="Role evaluated" data-review-field="role" placeholder="Senior Backend Engineer">
+          </label>
+          <label>
+            Reviewer title
+            <input type="text" name="Reviewer title" data-review-field="reviewer" placeholder="VP Engineering">
           </label>
         </div>
 
         <div class="rating-grid" aria-label="Review ratings">
           <label class="rating-field">
             <span>Evaluator expertise</span>
-            <input type="range" name="Evaluator expertise" min="1" max="10" value="8">
+            <input type="range" name="Evaluator expertise" data-review-rating="evaluatorExpertise" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Technical accuracy</span>
-            <input type="range" name="Technical accuracy" min="1" max="10" value="8">
+            <input type="range" name="Technical accuracy" data-review-rating="technicalAccuracy" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Role relevance</span>
-            <input type="range" name="Role relevance" min="1" max="10" value="8">
+            <input type="range" name="Role relevance" data-review-rating="roleRelevance" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Fairness and consistency</span>
-            <input type="range" name="Fairness and consistency" min="1" max="10" value="8">
+            <input type="range" name="Fairness and consistency" data-review-rating="fairnessConsistency" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Turnaround speed</span>
-            <input type="range" name="Turnaround speed" min="1" max="10" value="8">
+            <input type="range" name="Turnaround speed" data-review-rating="turnaroundSpeed" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Communication quality</span>
-            <input type="range" name="Communication quality" min="1" max="10" value="8">
+            <input type="range" name="Communication quality" data-review-rating="communicationQuality" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Report clarity</span>
-            <input type="range" name="Report clarity" min="1" max="10" value="8">
+            <input type="range" name="Report clarity" data-review-rating="reportClarity" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Candidate experience</span>
-            <input type="range" name="Candidate experience" min="1" max="10" value="8">
+            <input type="range" name="Candidate experience" data-review-rating="candidateExperience" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Security confidence</span>
-            <input type="range" name="Security confidence" min="1" max="10" value="8">
+            <input type="range" name="Security confidence" data-review-rating="securityConfidence" min="1" max="10" value="8">
             <output>8</output>
           </label>
           <label class="rating-field">
             <span>Value for money</span>
-            <input type="range" name="Value for money" min="1" max="10" value="8">
+            <input type="range" name="Value for money" data-review-rating="valueForMoney" min="1" max="10" value="8">
             <output>8</output>
           </label>
         </div>
 
         <label>
           Written review
-          <textarea name="Written review" rows="5" placeholder="What worked well, and what should we improve?"></textarea>
+          <textarea name="Written review" data-review-field="quote" rows="5" placeholder="What worked well, and what should we improve?"></textarea>
         </label>
 
         <label class="checkbox-field">

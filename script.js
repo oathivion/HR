@@ -4,6 +4,7 @@ const toggles = document.querySelectorAll(".toggle");
 const prices = document.querySelectorAll(".price");
 const ratingFields = document.querySelectorAll(".rating-field");
 const paymentLinks = document.querySelectorAll(".payment-link");
+const reviewForm = document.querySelector(".review-form");
 const reviewLists = document.querySelectorAll("[data-review-list]");
 const reviewAverageTargets = document.querySelectorAll("[data-review-average]");
 const reviewFactorBars = document.querySelectorAll("[data-review-factor]");
@@ -195,6 +196,44 @@ function renderReviews() {
 }
 
 renderReviews();
+
+function cleanJsString(value) {
+  return String(value || "")
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+    .replace(/\r?\n/g, "\\n");
+}
+
+reviewForm?.addEventListener("submit", () => {
+  const snippetTarget = reviewForm.querySelector("[data-review-snippet]");
+  const getField = (name) => reviewForm.querySelector(`[data-review-field="${name}"]`)?.value || "";
+  const ratings = {};
+
+  reviewForm.querySelectorAll("[data-review-rating]").forEach((input) => {
+    ratings[input.dataset.reviewRating] = Number(input.value);
+  });
+
+  const today = new Date().toISOString().slice(0, 10);
+  snippetTarget.value = `{
+  company: "${cleanJsString(getField("company"))}",
+  role: "${cleanJsString(getField("role"))}",
+  reviewer: "${cleanJsString(getField("reviewer"))}",
+  date: "${today}",
+  ratings: {
+    evaluatorExpertise: ${ratings.evaluatorExpertise},
+    technicalAccuracy: ${ratings.technicalAccuracy},
+    roleRelevance: ${ratings.roleRelevance},
+    fairnessConsistency: ${ratings.fairnessConsistency},
+    turnaroundSpeed: ${ratings.turnaroundSpeed},
+    communicationQuality: ${ratings.communicationQuality},
+    reportClarity: ${ratings.reportClarity},
+    candidateExperience: ${ratings.candidateExperience},
+    securityConfidence: ${ratings.securityConfidence},
+    valueForMoney: ${ratings.valueForMoney}
+  },
+  quote: "${cleanJsString(getField("quote"))}"
+}`;
+});
 
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
